@@ -1,0 +1,28 @@
+# -*- coding: utf-8 -*-
+{
+    'name': 'Meshoo Genral',
+    'summary': """Meshoo Genral""",
+    'website': 'www.meshoo.com',
+    'sequence': 1,
+    'support': 'contact@meshoo.com',
+    'category': 'Others',
+    'version': '1.0',
+    'license': 'LGPL-3',
+    'description': """Meshoo Genral.""",
+    'depends': ['base'],
+    'data': [
+        'data/company_data.xml',
+        'security/security_groups.xml',
+        'security/ir.model.access.csv',
+        'views/order_view.xml',
+        'views/store_view.xml',
+        'views/order_import_view.xml',
+        'views/payment_import_view.xml',
+        'views/return_import_view.xml',
+        'views/menuitem_view.xml',
+    ],
+    'images': [],
+    'installable': True,
+    'auto_install': False,
+    'application': True,
+}

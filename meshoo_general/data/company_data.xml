@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="company_meshoo" model="res.company">
+            <field name="name">Meshoo</field>
+            <field name="currency_id" ref="base.INR"/>
+            <field name="parent_id" ref="base.main_company"/>
+        </record>
+    </data>
+</odoo>

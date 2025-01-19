@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_return_import_form" model="ir.ui.view">
+        <field name="name">return.import.form</field>
+        <field name="model">return.import</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="status" widget="statusbar" statusbar_visible="draft,pick_up,done"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="return_file" required="1" filename="return_file_name" widget="binary"/>
+                            <field name="return_file_name" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="store_id" required="1" options="{'no_create':True,'no_open':True}"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_return_import_tree" model="ir.ui.view">
+        <field name="name">return.import.tree</field>
+        <field name="model">return.import</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="return_file"/>
+                <field name="return_file_name" column_invisible="1"/>
+                <field name="store_id"/>
+                <field name="status" widget="badge"
+                    decoration-info="status == 'draft'"
+                    decoration-success="status == 'done'"
+                    decoration-warning="status == 'cancel'"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_return_import_search" model="ir.ui.view">
+        <field name="name">return.import.search</field>
+        <field name="model">return.import</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="store_id"/>
+                <group expand="1" string="Group By">
+                    <filter string="Store" name="store_id" context="{'group_by':'store_id'}"/>
+                    <!-- <filter string="Company" name="company_id" context="{'group_by':'company_id'}"/> -->
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_return_import" model="ir.actions.act_window">
+        <field name="name">Import Returns</field>
+        <field name="res_model">return.import</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

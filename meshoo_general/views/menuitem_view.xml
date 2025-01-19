@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_ecommerce_root" name="Ecommerce"  sequence="1" 
+        groups="meshoo_general.group_ecommerce_user" 
+        web_icon="meshoo_general,static/description/shopping.png"/>
+
+    <menuitem id="menu_order_order" name="Orders" 
+        parent="menu_ecommerce_root" 
+        sequence="1" 
+        action="meshoo_general.action_order_order"/>
+
+    <menuitem id="menu_import_data" name="Import" 
+        parent="menu_ecommerce_root" 
+        sequence="2"/>
+
+    <menuitem id="menu_order_files" name="Orders" 
+        parent="menu_import_data" 
+        sequence="2" 
+        action="meshoo_general.action_order_import"/>
+
+    <menuitem id="menu_payment_files" name="Payments" 
+        parent="menu_import_data" 
+        sequence="2" 
+        action="meshoo_general.action_payment_import"/>
+
+    <menuitem id="menu_return_files" name="Return" 
+        parent="menu_import_data" 
+        sequence="2" 
+        action="meshoo_general.action_return_import"/>
+
+    <menuitem id="menu_ecommerce_configration" name="Configration" 
+        parent="menu_ecommerce_root" 
+        sequence="10" 
+        groups="meshoo_general.group_ecommerce_admin"/>
+
+    <menuitem id="menu_shop_configration" name="Shop" 
+        parent="menu_ecommerce_configration" 
+        sequence="1" 
+        action="meshoo_general.action_store_store"/>
+
+</odoo>

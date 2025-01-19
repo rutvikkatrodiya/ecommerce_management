@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_order_order,access_order_order,meshoo_general.model_order_order,base.group_user,1,1,1,1
+access_store_store,access_store_store,meshoo_general.model_store_store,base.group_user,1,1,1,1
+
+access_order_import,access_order_import,meshoo_general.model_order_import,base.group_user,1,1,1,1
+access_payment_import,access_payment_import,meshoo_general.model_payment_import,base.group_user,1,1,1,1
+access_return_import,access_return_import,meshoo_general.model_return_import,base.group_user,1,1,1,1

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_store_store_form" model="ir.ui.view">
+        <field name="name">store.store.form</field>
+        <field name="model">store.store</field>
+        <field name="arch" type="xml">
+            <form string="Store Form">
+                <header>
+                    <button name="create_company_for_store" type="object" string="Create Company" class="btn-primary" invisible="company_id"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="company_id" readonly="1"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_store_store_tree" model="ir.ui.view">
+        <field name="name">store.store.tree</field>
+        <field name="model">store.store</field>
+        <field name="arch" type="xml">
+            <tree editable="top">
+                <field name="name"/>
+                <field name="company_id" readonly="1"/>
+                <button name="create_company_for_store" type="object" string="Create Company" class="btn-primary" invisible="company_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="tender_doc_search_view" model="ir.ui.view">
+        <field name="name">store.store.search</field>
+        <field name="model">store.store</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="company_id"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_store_store" model="ir.actions.act_window">
+        <field name="name">Stores</field>
+        <field name="res_model">store.store</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>
